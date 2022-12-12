@@ -1377,6 +1377,7 @@ const createArchiveArgs: CreateArchiveArgs = { ... }
 | <code><a href="#cdk-nextjs-standalone.CreateArchiveArgs.property.zipFileName">zipFileName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-nextjs-standalone.CreateArchiveArgs.property.zipOutDir">zipOutDir</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-nextjs-standalone.CreateArchiveArgs.property.compressionLevel">compressionLevel</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-nextjs-standalone.CreateArchiveArgs.property.excludeGlob">excludeGlob</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdk-nextjs-standalone.CreateArchiveArgs.property.fileGlob">fileGlob</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-nextjs-standalone.CreateArchiveArgs.property.quiet">quiet</a></code> | <code>boolean</code> | *No description.* |
 
@@ -1419,6 +1420,16 @@ public readonly compressionLevel: number;
 ```
 
 - *Type:* number
+
+---
+
+##### `excludeGlob`<sup>Optional</sup> <a name="excludeGlob" id="cdk-nextjs-standalone.CreateArchiveArgs.property.excludeGlob"></a>
+
+```typescript
+public readonly excludeGlob: string[];
+```
+
+- *Type:* string[]
 
 ---
 

@@ -1,9 +1,9 @@
 {
-  "name": "cdk-nextjs-standalone",
+  "name": "@milliononmars/cdk-nextjs-standalone",
   "description": "Deploy a NextJS app to AWS using CDK. Uses standalone build and output tracing.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jetbridge/cdk-nextjs.git"
+    "url": "https://github.com/jaydeebee/cdk-nextjs.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -30,8 +30,8 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "JetBridge",
-    "email": "mischa@jetbridge.com",
+    "name": "JetBridge (originally)",
+    "email": "jdb@milliononmars.com",
     "organization": true
   },
   "devDependencies": {

@@ -88,7 +88,8 @@ export class NextJsLambda extends Construct {
       directory: nextBuild.nextStandaloneDir,
       zipFileName: 'standalone.zip',
       zipOutDir,
-      fileGlob: '*',
+      fileGlob: '* .next',
+      excludeGlob: ['*.nft.json', '*.dylib'],
       quiet: props.quiet,
     });
     if (!zipFilePath) throw new Error('Failed to create archive for lambda function code');

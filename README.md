@@ -8,6 +8,16 @@ A CDK construct to deploy a NextJS 12.3.0+ app using AWS CDK.
 
 Uses the [standalone output](https://nextjs.org/docs/advanced-features/output-file-tracing) build mode.
 
+## Fork details
+
+The Million On Mars fork of this package makes the following changes:
+
+- Based on v1.2.0
+- Zip file generated for nextjs backend excludes .nft.json (NextJS full
+  tracing result files) and .dylib (macOS dynamic libraries), to reduce the
+  size of the zip files.  Neither is used in production, and they were
+  _quite_ large for us.
+
 ## Quickstart
 
 ```ts

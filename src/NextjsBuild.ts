@@ -200,6 +200,7 @@ export interface CreateArchiveArgs {
   readonly zipFileName: string;
   readonly zipOutDir: string;
   readonly fileGlob?: string;
+  readonly excludeGlob?: string[];
   readonly quiet?: boolean;
 }
 
@@ -209,6 +210,7 @@ export function createArchive({
   zipFileName,
   zipOutDir,
   fileGlob = '*',
+  excludeGlob = [],
   compressionLevel = 1,
   quiet,
 }: CreateArchiveArgs): string | null {
@@ -219,13 +221,14 @@ export function createArchive({
   fs.mkdirpSync(zipOutDir);
   // get output path
   const zipFilePath = path.join(zipOutDir, zipFileName);
+  const exclude = excludeGlob?.length > 0 ? `-x '${excludeGlob.join("' '")}'` : '';
 
   // run script to create zipfile, preserving symlinks for node_modules (e.g. pnpm structure)
   const result = spawn.sync(
     'bash', // getting ENOENT when specifying 'node' here for some reason
     [
       quiet ? '-c' : '-xc',
-      [`cd '${directory}'`, `zip -ryq${compressionLevel} '${zipFilePath}' ${fileGlob}`].join('&&'),
+      [`cd '${directory}'`, `zip -ryq${compressionLevel} '${zipFilePath}' ${fileGlob} ${exclude}`].join('&&'),
     ],
     { stdio: 'inherit' }
   );
